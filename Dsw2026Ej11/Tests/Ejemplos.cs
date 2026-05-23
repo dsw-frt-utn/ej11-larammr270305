@@ -44,8 +44,8 @@ internal class Ejemplos
 
         // Buscar por nombre un alumno que no exista y mostrar por consola el texto "No existe"
         Console.WriteLine("\n--- Buscando 'Pedro' ---");
-        var noEncontrada = casoList.BuscarAlumno("Pedro");
-        Console.WriteLine(noEncontrada != null ? noEncontrada.ToString() : "No existe");
+        var noEncontrado = casoList.BuscarAlumno("Pedro");
+        Console.WriteLine(noEncontrado != null ? noEncontrado.ToString() : "No existe");
 
         // Eliminar un alumno y listar por consola los alumnos
         Console.WriteLine("\n--- Lista tras eliminar a 'Lara' ---");
