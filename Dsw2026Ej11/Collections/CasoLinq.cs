@@ -21,8 +21,8 @@ public class CasoLinq
     //private readonly List<Libro> _listaLibros = new List<Libro>();
 
     private readonly List<Libro> _listaLibros = Libro.CrearLista();
-0
-0    // Obtenemos el primer libro de la lista
+
+    // Obtenemos el primer libro de la lista
     public Libro GetPrimero() => _listaLibros.First();
 
     // Obtenemos el ultimo libro de la lista
@@ -50,11 +50,11 @@ public class CasoLinq
     public Libro GetMenorPrecio() => _listaLibros.OrderBy(l => l.Precio).First();
 
     // Obtenemos los libros cuyo preico sea mayor al promedio
-    public List<Libro> GetMayorPromedio()
+    public IEnumerable<Libro> GetMayorPromedio()
     {
         var promedio = GetPromedioPrecios();
 
-        return _listaLibros.Where(l => l.Precio > promedio).ToList();
+        return _listaLibros.Where(l => l.Precio > promedio);
     }
 
     // Obtenemos los libros ordenados por titulo de forma descendiente
