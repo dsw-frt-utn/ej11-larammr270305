@@ -18,6 +18,8 @@ namespace Dsw2026Ej11.Collections;
  */
 public class CasoLinq
 {
+    //private readonly List<Libro> _listaLibros = new List<Libro>();
+
     private readonly List<Libro> _listaLibros = Libro.CrearLista();
 
     // Obtenemos el primer libro de la lista
@@ -43,7 +45,7 @@ public class CasoLinq
     // Primero ordenamos de menor a mayor y luego obtenemos el último
     public Libro GetMayorPrecio() => _listaLibros.OrderBy(l => l.Precio).Last();
 
-    //Obtener el libro con el precio mas alto
+    //Obtener el libro con el precio mas bajo
     // Primero ordenamos de menor a mayor y luego obtenemos el primero
     public Libro GetMenorPrecio() => _listaLibros.OrderBy(l => l.Precio).First();
 
