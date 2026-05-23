@@ -21,8 +21,8 @@ public class CasoLinq
     //private readonly List<Libro> _listaLibros = new List<Libro>();
 
     private readonly List<Libro> _listaLibros = Libro.CrearLista();
-
-    // Obtenemos el primer libro de la lista
+0
+0    // Obtenemos el primer libro de la lista
     public Libro GetPrimero() => _listaLibros.First();
 
     // Obtenemos el ultimo libro de la lista
@@ -36,10 +36,10 @@ public class CasoLinq
 
     // Obtenemos la lista de libros con ID mayor a 15
 
-    public List<Libro> GetListById() => _listaLibros.Where(l => l.Id > 15).ToList();
+    public IEnumerable<Libro> GetListById() => _listaLibros.Where(l => l.Id > 15);
 
     // Obtener una lista de cada libro con su titulo y precio en formato moneda
-    public List<String> GetLibros() => _listaLibros.Select(l => $"{l.Titulo} - {l.Precio:C}").ToList();
+    public IEnumerable<string> GetLibros() => _listaLibros.Select(l => $"{l.Titulo} - {l.Precio:C}");
 
     // Obtener el libro con el precio mas alto
     // Primero ordenamos de menor a mayor y luego obtenemos el último
@@ -58,5 +58,5 @@ public class CasoLinq
     }
 
     // Obtenemos los libros ordenados por titulo de forma descendiente
-    public List<Libro> GetOrdenadosPorTituloDesc() => _listaLibros.OrderByDescending(l => l.Titulo).ToList();
+    public IEnumerable<Libro> GetOrdenadosPorTituloDesc() => _listaLibros.OrderByDescending(l => l.Titulo);
 }
